@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#090c18" />
+  <link rel="icon" href="data:," />
+  <title>Neon Rumble — Stick Fighter</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="game-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Neon Rumble home"><span class="brand-mark">N</span><span>NEON<span class="brand-light">RUMBLE</span></span></a>
+      <div class="season-tag"><span class="live-dot"></span> ARCADE MODE <i>01 / 03</i></div>
+      <button class="sound-toggle" id="soundToggle" aria-label="Toggle sound"><span class="sound-icon">♪</span><span>SOUND <b>ON</b></span></button>
+    </header>
+
+    <section class="game-card" aria-label="Neon Rumble fighting game">
+      <div class="arena-top">
+        <div class="fighter-info left-info"><span class="player-number">P1</span><div><strong>VOLT</strong><small>THE QUICKDRAW</small></div></div>
+        <div class="fight-status"><span class="round-label">ROUND <b>01</b></span><div class="timer" id="timer">60</div><span class="status-text" id="statusText">FIGHT!</span></div>
+        <div class="fighter-info right-info"><div><strong>GLITCH</strong><small>THE ENFORCER</small></div><span class="cpu-badge">CPU</span></div>
+        <div class="health-track health-left"><div class="health-fill" id="health1"></div><span class="health-shine"></span></div>
+        <div class="health-track health-right"><div class="health-fill" id="health2"></div><span class="health-shine"></span></div>
+        <div class="meter-row meter-left"><span>DRIVE</span><div class="meter-track"><i id="meter1"></i></div></div>
+        <div class="meter-row meter-right"><span>DRIVE</span><div class="meter-track"><i id="meter2"></i></div></div>
+      </div>
+
+      <div class="canvas-wrap" id="canvasWrap">
+        <canvas id="gameCanvas" width="1000" height="520" aria-label="Fight arena"></canvas>
+        <div class="round-banner" id="roundBanner"><span class="banner-kicker">NEON DISTRICT // 2099</span><strong id="bannerTitle">READY?</strong><span id="bannerSub">FIRST TO TWO ROUNDS</span><button id="startButton">ENTER THE ARENA <span>↗</span></button></div>
+        <div class="toast" id="toast"></div>
+        <div class="pause-overlay hidden" id="pauseOverlay"><strong>PAUSED</strong><span>Press <kbd>ESC</kbd> to jump back in</span></div>
+      </div>
+      <div class="arena-footer"><span><i class="tiny-spark">✦</i> THE UNDERGROUND CIRCUIT</span><span class="footer-center">BEST OF 3 <b>•</b> NO MERCY</span><span id="roundScore">ROUNDS <b>0</b> — <b>0</b></span></div>
+    </section>
+
+    <section class="below-game">
+      <div class="controls-heading"><span>HOW TO FIGHT</span><span class="control-tip">LAND HITS TO CHARGE YOUR DRIVE METER <i>↗</i></span></div>
+      <div class="controls-grid">
+        <div class="control-group movement"><span class="group-icon">⌖</span><div class="control-keys"><kbd>A</kbd><kbd>D</kbd><kbd>W</kbd><kbd>S</kbd></div><div class="control-copy"><b>MOVE & DEFEND</b><small>Move · Jump · Block</small></div></div>
+        <div class="control-group"><span class="group-icon punch-icon">✳</span><div class="control-keys"><kbd>J</kbd><kbd>K</kbd></div><div class="control-copy"><b>ATTACK</b><small>Quick punch · Heavy kick</small></div></div>
+        <div class="control-group"><span class="group-icon special-icon">✦</span><div class="control-keys"><kbd class="key-special">L</kbd></div><div class="control-copy"><b>SPECIAL</b><small>Spend drive for a burst</small></div></div>
+        <div class="control-group"><span class="group-icon pause-icon">Ⅱ</span><div class="control-keys"><kbd>ESC</kbd></div><div class="control-copy"><b>PAUSE</b><small>Take a breather</small></div></div>
+      </div>
+      <div class="mobile-controls" id="mobileControls">
+        <div class="touch-cluster movement-touch"><button data-key="a" aria-label="Move left">◀</button><button data-key="d" aria-label="Move right">▶</button><button data-key="w" aria-label="Jump">▲</button><button data-key="s" aria-label="Block">▣</button></div>
+        <div class="touch-cluster attack-touch"><button data-key="j">PUNCH</button><button data-key="k">KICK</button><button data-key="l" class="touch-special">BURST</button></div>
+      </div>
+    </section>
+    <footer class="page-footer"><span>BUILT FOR THE BOLD <b>✦</b></span><span>© 2099 NEON DISTRICT FIGHT CLUB</span></footer>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
