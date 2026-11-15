@@ -32,7 +32,17 @@
 
       <div class="canvas-wrap" id="canvasWrap">
         <canvas id="gameCanvas" width="1000" height="520" aria-label="Fight arena"></canvas>
-        <div class="round-banner" id="roundBanner"><span class="banner-kicker">NEON DISTRICT // 2099</span><strong id="bannerTitle">READY?</strong><span id="bannerSub">FIRST TO TWO ROUNDS</span><button id="startButton">ENTER THE ARENA <span>↗</span></button></div>
+        <section class="main-menu" id="mainMenu" aria-label="Main menu">
+          <div class="menu-content">
+            <span class="menu-kicker"><i></i> NEON DISTRICT // 2099</span>
+            <h1 class="menu-title"><span>NEON</span> RUMBLE</h1>
+            <p class="menu-tagline">THE STREETS ARE YOURS. TAKE THE CROWN.</p>
+            <div class="menu-matchup"><div><b>VOLT</b><small>THE QUICKDRAW</small></div><span class="menu-vs">VS</span><div><b>GLITCH</b><small>THE ENFORCER</small></div></div>
+            <button class="enter-battle" id="enterBattle">ENTER BATTLE <span>↗</span></button>
+            <span class="menu-hint">PRESS ENTER TO START <i>•</i> BEST OF 3</span>
+          </div>
+        </section>
+        <div class="round-banner hidden" id="roundBanner"><span class="banner-kicker">NEON DISTRICT // 2099</span><strong id="bannerTitle">READY?</strong><span id="bannerSub">FIRST TO TWO ROUNDS</span><button id="startButton">ENTER THE ARENA <span>↗</span></button></div>
         <div class="toast" id="toast"></div>
         <div class="pause-overlay hidden" id="pauseOverlay"><strong>PAUSED</strong><span>Press <kbd>ESC</kbd> to jump back in</span></div>
       </div>
